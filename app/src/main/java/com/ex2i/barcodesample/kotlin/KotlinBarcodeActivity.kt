@@ -4,14 +4,14 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageButton
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.ex2i.barcodesample.R
 import com.journeyapps.barcodescanner.CaptureManager
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
-import kotlinx.android.synthetic.main.activity_barcode_scanner.*
+import kotlinx.android.synthetic.main.activity_barcode.*
 
-class BarcodeActivity : AppCompatActivity(), DecoratedBarcodeView.TorchListener {
+class KotlinBarcodeActivity : AppCompatActivity(), DecoratedBarcodeView.TorchListener {
 
     private var capture: CaptureManager? = null
     private var barcodeScannerView: DecoratedBarcodeView? = null
@@ -21,7 +21,7 @@ class BarcodeActivity : AppCompatActivity(), DecoratedBarcodeView.TorchListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_barcode_scanner)
+        setContentView(R.layout.activity_barcode)
 
         barcodeScannerView = findViewById(R.id.zxing_barcode_scanner)
         barcodeScannerView?.setTorchListener(this)
@@ -31,7 +31,7 @@ class BarcodeActivity : AppCompatActivity(), DecoratedBarcodeView.TorchListener 
 
         txt_barcode_input.setOnClickListener {
             startActivityForResult(
-                Intent(this@BarcodeActivity, BarcodePopUpActivity::class.java),
+                Intent(this@KotlinBarcodeActivity, KotlinBarcodePopUpActivity::class.java),
                 REQUEST_BARCODE_RESULT
             )
             overridePendingTransition(R.anim.anim_slide_in_bottom, R.anim.anim_slide_out_top)
@@ -42,11 +42,7 @@ class BarcodeActivity : AppCompatActivity(), DecoratedBarcodeView.TorchListener 
         }
 
         img_barcode_flash.setOnClickListener {
-            if (switchFlashlightButtonCheck){
-                onTorchOff()
-            } else {
-                onTorchOn()
-            }
+            switchFlashlight()
         }
     }
 
@@ -76,13 +72,21 @@ class BarcodeActivity : AppCompatActivity(), DecoratedBarcodeView.TorchListener 
         //backPressCloseHandler?.onBackPressed()
     }
 
+    private fun switchFlashlight() {
+        if (switchFlashlightButtonCheck) {
+            barcodeScannerView?.setTorchOff()
+            img_barcode_flash.setImageResource(R.drawable.ic_flash_off_white_36dp)
+        } else {
+            barcodeScannerView?.setTorchOn()
+            img_barcode_flash.setImageResource(R.drawable.ic_flash_on_white_36dp)
+        }
+    }
+
     override fun onTorchOn() {
-        img_barcode_flash?.setImageResource(R.drawable.ic_flash_on_white_36dp)
         switchFlashlightButtonCheck = true
     }
 
     override fun onTorchOff() {
-        img_barcode_flash?.setImageResource(R.drawable.ic_flash_off_white_36dp)
         switchFlashlightButtonCheck = false
     }
 

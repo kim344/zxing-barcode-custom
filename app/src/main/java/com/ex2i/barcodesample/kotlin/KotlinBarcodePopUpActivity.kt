@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ex2i.barcodesample.R
 import kotlinx.android.synthetic.main.activity_barcode_popup.*
 
-class BarcodePopUpActivity : AppCompatActivity() {
+class KotlinBarcodePopUpActivity : AppCompatActivity() {
 
     private var inputResult : String? = null
     private var isConfirm : Boolean = false

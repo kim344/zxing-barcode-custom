@@ -3,13 +3,11 @@ package com.ex2i.barcodesample.kotlin
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.ex2i.barcodesample.R
 import com.google.zxing.integration.android.IntentIntegrator
 
-class BarcodeInitActivity : AppCompatActivity() {
+class KotlinBarcodeInitActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +23,7 @@ class BarcodeInitActivity : AppCompatActivity() {
          */
 
         IntentIntegrator(this).apply {
-            captureActivity = BarcodeActivity::class.java
+            captureActivity = KotlinBarcodeActivity::class.java
             setBeepEnabled(false)
             initiateScan()
         }

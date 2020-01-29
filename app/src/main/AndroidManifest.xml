@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".kotlin.MainActivity">
+        <activity android:name=".kotlin.KotlinMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,21 +19,43 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".kotlin.BarcodeInitActivity"/>
+        <!--Kotlin-->
+        <activity android:name=".kotlin.KotlinBarcodeInitActivity" />
         <activity
-            android:name=".kotlin.AnyOrientationCaptureActivity"
+            android:name=".kotlin.KotlinAnyOrientationCaptureActivity"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
-            android:name=".kotlin.BarcodeActivity"
+            android:name=".kotlin.KotlinBarcodeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/BarcodeTheme" />
 
         <activity
-            android:name=".kotlin.BarcodePopUpActivity"
+            android:name=".kotlin.KotlinBarcodePopUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!--Java-->
+        <activity android:name=".java.JavaMainActivity"/>
+        <activity android:name=".java.JavaBarcodeInitActivity" />
+        <activity
+            android:name=".java.JavaAnyOrientationCaptureActivity"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".java.JavaBarcodeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BarcodeTheme" />
+
+        <activity
+            android:name=".java.JavaBarcodePopUpActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Transparent"
             android:windowSoftInputMode="adjustResize" />

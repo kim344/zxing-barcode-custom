@@ -2,13 +2,11 @@ package com.ex2i.barcodesample.kotlin
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ex2i.barcodesample.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(){
+class KotlinMainActivity : AppCompatActivity(){
 
     val REQUEST_QR = 1
 
@@ -17,7 +15,7 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         btnBarcode.setOnClickListener {
-            startActivityForResult(Intent(this@MainActivity,BarcodeInitActivity::class.java),REQUEST_QR)
+            startActivityForResult(Intent(this@KotlinMainActivity,KotlinBarcodeInitActivity::class.java),REQUEST_QR)
         }
     }
 
