@@ -61,28 +61,16 @@
             android:inputType="number"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_barcode_popup_explain"
-            android:background="@null"
-            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="25dp"
             android:textSize="22sp"
             android:textColor="#000000"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:textAlignment="center"
+            android:backgroundTint="#999999"
             />
 
-        <View
-            android:id="@+id/view_barcode_popup_bar"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#000000"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_barcode_popup_input"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
