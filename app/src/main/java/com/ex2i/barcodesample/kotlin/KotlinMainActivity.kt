@@ -14,7 +14,7 @@ class KotlinMainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnBarcode.setOnClickListener {
+        btn_barcode.setOnClickListener {
             startActivityForResult(Intent(this@KotlinMainActivity,KotlinBarcodeInitActivity::class.java),REQUEST_QR)
         }
     }
@@ -27,7 +27,7 @@ class KotlinMainActivity : AppCompatActivity(){
             if (requestCode == REQUEST_QR){
 
                 data?.let {
-                    txtResult.text = data.getStringExtra("QR")
+                    txt_result.text = data.getStringExtra("QR")
                 }
 
             }

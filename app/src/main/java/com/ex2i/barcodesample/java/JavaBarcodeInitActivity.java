@@ -38,20 +38,18 @@ public class JavaBarcodeInitActivity extends AppCompatActivity {
             // 바코드 PopUp 수동으로 입력한 결과값
             String pupUpResult = data.getStringExtra("QR");
 
-            // 최종 WebView 화면으로 넘기는 결과값
-            Intent goWebViewIntent = new Intent();
+            Intent intent = new Intent();
 
             if (result != null) {
-                goWebViewIntent.putExtra("QR", result);
+                intent.putExtra("QR", result);
             } else {
-                goWebViewIntent.putExtra("QR", pupUpResult);
+                intent.putExtra("QR", pupUpResult);
             }
 
-            setResult(RESULT_OK, goWebViewIntent);
+            setResult(RESULT_OK, intent);
             finish();
 
         } else {
-
             finish();
         }
     }

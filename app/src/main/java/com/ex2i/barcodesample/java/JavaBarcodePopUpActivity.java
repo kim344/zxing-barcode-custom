@@ -35,7 +35,6 @@ public class JavaBarcodePopUpActivity extends AppCompatActivity {
         txtBarcodeConfirm = findViewById(R.id.txt_barcode_popup_confirm);
         editBarcodeInput = findViewById(R.id.edit_barcode_popup_input);
 
-        // 취소 버튼 클릭
         TextView txtBarcodeCancel = findViewById(R.id.txt_barcode_popup_cancel);
         txtBarcodeCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +44,6 @@ public class JavaBarcodePopUpActivity extends AppCompatActivity {
             }
         });
 
-        // 바코드 수동 입력값 리스너
         editBarcodeInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -71,7 +69,6 @@ public class JavaBarcodePopUpActivity extends AppCompatActivity {
             }
         });
 
-        // 확인 클릭
         txtBarcodeConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

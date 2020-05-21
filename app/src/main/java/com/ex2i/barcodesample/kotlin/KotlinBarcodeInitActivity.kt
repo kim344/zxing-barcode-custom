@@ -42,17 +42,16 @@ class KotlinBarcodeInitActivity : AppCompatActivity() {
             // 바코드 PopUp 수동으로 읽어온 결과값
             val popUpResult = data?.getStringExtra("QR")
 
-            // 최종 WebView 화면으로 넘기는 결과값
-            val goIntent = Intent()
+            val intent = Intent()
 
             if (result != null) {
-                goIntent.putExtra("QR", result)
+                intent.putExtra("QR", result)
                 Toast.makeText(this, result, Toast.LENGTH_LONG).show()
             } else {
-                goIntent.putExtra("QR", popUpResult)
+                intent.putExtra("QR", popUpResult)
             }
 
-            setResult(RESULT_OK, goIntent)
+            setResult(RESULT_OK, intent)
             finish()
 
         } else {

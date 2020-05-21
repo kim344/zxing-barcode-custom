@@ -23,8 +23,8 @@ public class JavaMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnBarcode = findViewById(R.id.btnBarcode);
-        txtResult = findViewById(R.id.txtResult);
+        btnBarcode = findViewById(R.id.btn_barcode);
+        txtResult = findViewById(R.id.txt_result);
 
         btnBarcode.setOnClickListener(new View.OnClickListener() {
             @Override
